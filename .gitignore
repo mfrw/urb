@@ -1,3 +1,6 @@
 *.swp
 rbtest
 *.o
+*.so
+tags
+TAGS
