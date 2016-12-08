@@ -1,10 +1,7 @@
 /*
- * Author : mfrw // falakreyaz@gmail.com
- *
- */
-/*
- *
- * This program is adapted from the linux kernel and in no, way i claim i have any copyright
+ * Author : Muhammad Falak R Wani (mfrw)
+ * This program is adapted from the linux kernel and in no way,
+ * I claim I have any copyright.
  */
 
 #include<stdio.h>
