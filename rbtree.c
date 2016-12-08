@@ -43,22 +43,6 @@
  */
 
 /*
- * Notes on lockless lookups:
- *
- * All stores to the tree structure (rb_left and rb_right) must be done using
- * WRITE_ONCE(). And we must not inadvertently cause (temporary) loops in the
- * tree structure as seen in program order.
- *
- * These two requirements will allow lockless iteration of the tree -- not
- * correct iteration mind you, tree rotations are not atomic so a lookup might
- * miss entire subtrees.
- *
- * But they do guarantee that any such traversal will only see valid elements
- * and that it will indeed complete -- does not get stuck in a loop.
- *
- * It also guarantees that if the lookup returns an element it is the 'correct'
- * one. But not returning an element does _NOT_ mean it's not present.
- *
  * NOTE:
  *
  * Stores to __rb_parent_color are not important for simple lookups so those
