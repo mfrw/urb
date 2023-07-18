@@ -1,7 +1,7 @@
 CFLAGS = -g -O2
 
 rbtest: liburb.so rbtree_test.o
-	gcc $(CFLAGS) -L. -o rbtest rbtree_test.o -lurb
+	gcc $(CFLAGS) -L. -Wl,-rpath=. -o rbtest rbtree_test.o -lurb
 
 liburb.so: rbtree.o
 	gcc -shared -o liburb.so rbtree.o
